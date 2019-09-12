@@ -31,11 +31,11 @@ You can use Eclipse to start the project in local or you can simply use mvn and 
 ##### Install App using Eclipse
 A step by step series of examples that tell you how to get a development env running using Eclipse
 
-Download the source code in the local machine
+* Download the source code in the local machine
 
 ![screenshot of download ](readMeImages/download.PNG)
  
- In Eclipse , Import the Project using Import as Maven Project.
+* In Eclipse , Import the Project using Import as Maven Project.
 
 ![screenshot of importmaven ](readMeImages/importmaven.PNG)
 
@@ -45,21 +45,27 @@ Download the source code in the local machine
 
 ![screenshot of importmaven ](readMeImages/importmaven4.PNG)
 
-We can easily run the project and no special instructions are required as Application is developed using Spring Boot and used Embedded DB . 
-Post Build, You can  Click 	Run As --> Java Application.
+*  We can easily run the project and no special instructions are required as Application is developed using Spring Boot and used Embedded DB . 
+
+*   Post Build, You can  Click 	Run As --> Java Application.
 ![screenshot of importmaven ](readMeImages/run.PNG)
-	 
-Goto http://localhost:8080/index.html  and  open Simple UI  ![screenshot of PostMan](readMeImages/simpleUI.PNG)
 
+*   Goto http://localhost:8080/index.html  and  open Simple UI 
 
-OR You can Open any REST Tester for example POSTMAN, to test the services  ![screenshot of PostMan](readMeImages/postman.PNG)
+![screenshot of PostMan](readMeImages/simpleUI.PNG)
+
+* Other options is to  Open any REST Tester for example POSTMAN, to test the services 
+
+ ![screenshot of PostMan](readMeImages/postman.PNG)
   
 
 
 
 ### View REST API Documentations
  * After starting Application goto -> http://localhost:8080/swagger-ui.html  to check the API Documentation
-   ![screenshot of Swagger Ui](readMeImages/swagger.PNG)
+ 
+ 
+![screenshot of Swagger Ui](readMeImages/swagger.PNG)
    
 ## Built With
 
