@@ -36,13 +36,20 @@ A step by step series of examples that tell you how to get a development env run
 *  Build the Project using Run As --> Maven Install
 *  We can easily run the project and no special instructions are required as Application is developed using Spring Boot and used Embedded DB . 
 	 Post Build, You can  Click 	Run As --> Java Application.
-*  Open any REST Tester for example POSTMAN, to test the services 
+	 
+* Goto http://localhost:8080/index.html  and  open Simple UI 
+ ![screenshot of PostMan](readMeImages/simpleUI.PNG)
+
+* OR You can Open any REST Tester for example POSTMAN, to test the services 
+ ![screenshot of PostMan](readMeImages/postman.PNG)
+  
 
 
 
 ### View REST API Documentations
  * After starting Application goto -> http://localhost:8080/swagger-ui.html  to check the API Documentation
-     
+   ![screenshot of Swagger Ui](readMeImages/swagger.PNG)
+   
 ## Built With
 
 * [SpringBoot](https://spring.io/projects/spring-boot) - The Spring framework for REST and web
