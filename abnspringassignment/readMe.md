@@ -1,8 +1,8 @@
 # Recipes Manager
 
-* Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring REST  and Spring Web.
-* Earlier  I had created same project using simple web project where i had not used any spring components as I was having limited knowledge about spring boot.I had created that project in 1 day.  you check that project here --> https://github.com/msmittalas/abpamorassignmet
-* Since i wanted to learn more about spring boot and related stuff , i did the same project in Spring boot . it took around 2 days to learn and develop this project. 
+* Simple Web Rest API project which can add, remove, update and getAll Recipes added by User. this project created with Spring boot, H2 Database, Maven, Spring REST  and Spring Web.
+* Earlier  I had created the same project using Servlet/Rest/JSP. where I had not used any spring components as I was having limited knowledge about spring boot. I had created that project in 1 day.  you check that project here --> https://github.com/msmittalas/abpamorassignmet
+* Since I wanted to learn more about spring boot and related stuff, I did the same project in Spring boot. it took around 2 days to learn and develop this project. 
 
 
 ## Technologies and Tools Used
@@ -32,11 +32,11 @@ You can use Eclipse to start the project in local or you can simply use mvn and 
 A step by step series of examples that tell you how to get a development env running using Eclipse
 
 *  Download the source code in the local machine 
-*  In Eclipse , Import the Project using Import as Maven Project .
+*  In Eclipse , Import the Project using Import as Maven Project.
 *  Build the Project using Run As --> Maven Install
 *  We can easily run the project and no special instructions are required as Application is developed using Spring Boot and used Embedded DB . 
-	 Post Build, You can  Click 	Run As --> Java Application .
-*  Open any REST Tester for example POSTMAN , to test the services 
+	 Post Build, You can  Click 	Run As --> Java Application.
+*  Open any REST Tester for example POSTMAN, to test the services 
 
 
 
