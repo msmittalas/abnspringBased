@@ -34,13 +34,14 @@ A step by step series of examples that tell you how to get a development env run
 *  Download the source code in the local machine 
 *  In Eclipse , Import the Project using Import as Maven Project .
 *  Build the Project using Run As --> Maven Install
-*   No special instructions are required As Application is developed using Spring Boot and used Embedded DB .  We can easily run the projecPost Build , you can  Click 	Run As --> Java Application .
+*  We can easily run the project and no special instructions are required as Application is developed using Spring Boot and used Embedded DB . 
+	 Post Build, You can  Click 	Run As --> Java Application .
 *  Open any REST Tester for example POSTMAN , to test the services 
 
 
 
-###View REST API Documentations
- *After starting Application goto -->    http://localhost:8080/swagger-ui.html   to check the API Documentation
+### View REST API Documentations
+ * After starting Application goto -> http://localhost:8080/swagger-ui.html  to check the API Documentation
      
 ## Built With
 
