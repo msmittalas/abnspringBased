@@ -37,6 +37,7 @@ function fillEditForm(data)
 	
 	$("#editViewRecipe").show();
 	
+	
 }
 
 function buildFromResponse(data)
@@ -119,14 +120,12 @@ $(document).ready(function(){
 			data:jsonData , 
 			success: function (response, status, xhr) {
 				
-				if(response.status==200)
-					{
 					$('#message').html("");
 					
 					$('#message').append('New Recipe Added ').show().delay(2000).fadeOut();
 					
 						getAllRecipe(restURL);
-					}
+					
 			},
 			error: function (jqXhr, textStatus, errorMessage) {
 					$('#message').append('Error: ' + errorMessage);
@@ -169,19 +168,39 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<h2>Dashboard</h2>
-<h3 id="message"></h3>
+<div>
+<h2>Recipes Manager    Dashboard</h2>
+<hr/>
+</div>
 <div id="recipesDropDown">
-Select Recipe and Press Manage to View/Delete/Edit 
+<h3>Select Recipe and Press Manage to View/Delete/Edit </h3>
 <select id="listRecipes">
 </select>
 
 <input value="manage" type="button" id="manageRecipe" /> 
+
+ <div id="editViewRecipe"  style="display:none">
+ <form  method="post" id="editRecipeForm">
+<br/>
+<h3>Edit Recipe </h3>
+ recipeName: <input name="recipeName" type="text"  id="recipeName" />
+<br/>  VEG/NON-VEG :  <input name="isVeg" type="text" value="veg" id="isVeg"/> 
+ <br/>numberOfPeople: <input name="numberOfPeople" type="text" id="numberOfPeople" />
+ <br/>ingredients: <input name="ingredients" type="text" id="ingredients" />
+  <br/>instructions: <input name="instructions" type="textarea" id="instructions" />
+<input name="recipeId" type="hidden" id="recipeId" />
+  
+  <br/><input value ="Edit" type="button" id="submitEdit" /> <input value ="Delete" type="button" id="submitDelete" /> 
+  
+  
+</form>
+ </div>
+
 </div>
-
+<hr/>
 <div id="createRecipesDiv">
-Add Recipes 
 
+<h3>Add Recipes </h3>
 <form action="addRecipe" method="post" id="addRecipeForm">
 <br/>
  recipeName: <input name="recipeName" type="text" />
@@ -196,24 +215,11 @@ Add Recipes
 </form>
 
 </div>
+<div>
 
- <div id="editViewRecipe"  style="display:none">
- <form  method="post" id="editRecipeForm">
-<br/>
-<h3>Edit Recipe </h3>
- recipeName: <input name="recipeName" type="text"  id="recipeName" />
-<br/>  VEG/NON-VEG :  <input name="isVeg" type="text" value="veg" id="isVeg"/> 
- <br/>numberOfPeople: <input name="numberOfPeople" type="text" id="numberOfPeople" />
- <br/>ingredients: <input name="ingredients" type="text" id="ingredients" />
-  <br/>instructions: <input name="instructions" type="textarea" id="instructions" />
-<input name="recipeId" type="hidden" id="recipeId" />
-  
-  <br/><input value ="Edit" type="button" id="submitEdit" /> 
-  <br/><input value ="Delete" type="button" id="submitDelete" /> 
-  
-  
-</form>
- </div>
+
+<h3 id="message"></h3>
+</div>
 
 
 
