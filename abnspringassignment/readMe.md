@@ -1,7 +1,7 @@
 # Recipes Manager
 
 * Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring REST  and Spring Web.
-* Earlier  I had created same project using simple web project where i had not used any spring components as I was having limited knowledge about spring boot.I had created that project in 1 day.
+* Earlier  I had created same project using simple web project where i had not used any spring components as I was having limited knowledge about spring boot.I had created that project in 1 day.  you check that project here --> https://github.com/msmittalas/abpamorassignmet
 * Since i wanted to learn more about spring boot and related stuff , i did the same project in Spring boot . it took around 2 days to learn and develop this project. 
 
 
