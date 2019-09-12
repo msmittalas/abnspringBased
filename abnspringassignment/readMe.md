@@ -1,6 +1,6 @@
 # RecipesManager
 
-	Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring Web and Spring Web.
+Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring Web and Spring Web.
 
 ## Technologies and Tools Use
   Spring Boot,JPA,WEB,Test  2.1.8 
@@ -17,9 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
-
-```
-```
+* **JDK 1.8** **MAVEN 3**
 
 ### Installing
 
