@@ -1,6 +1,9 @@
 # Recipes Manager
 
-Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring REST  and Spring Web.
+* Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring REST  and Spring Web.
+* Earlier  I had created same project using simple web project where i had not used any spring components as I was having limited knowledge about spring boot.I had created that project in 1 day.
+* Since i wanted to learn more about spring boot and related stuff , i did the same project in Spring boot . it took around 2 days to learn and develop this project. 
+
 
 ## Technologies and Tools Used
 * Spring Boot,JPA,WEB,Test  2.1.8
@@ -23,7 +26,7 @@ What things you need to install the software and how to install them
 
 ### Installing 
 
-You can use Eclipse to start the porject in local or you can simply use mvn and java command to start the project in local
+You can use Eclipse to start the project in local or you can simply use mvn and java command to start the project in local
 
 ##### Install App using Eclipse
 A step by step series of examples that tell you how to get a development env running using Eclipse
@@ -34,49 +37,17 @@ A step by step series of examples that tell you how to get a development env run
 *   No special instructions are required As Application is developed using Spring Boot and used Embedded DB .  We can easily run the projecPost Build , you can  Click 	Run As --> Java Application .
 *  Open any REST Tester for example POSTMAN , to test the services 
 
-#####Install App using CMD and Maven 
-A step by step series of examples that tell you how to get a development env running using cmd and 
 
 
-
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
+###View REST API Documentations
+ *After starting Application goto -->    http://localhost:8080/swagger-ui.html   to check the API Documentation
+     
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [SpringBoot](https://spring.io/projects/spring-boot) - The Spring framework for REST and web
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [SWAGGER](https://swagger.io/) - Used to generate REST Documentations
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
@@ -85,6 +56,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Referred  https://spring.io/guides/gs/rest-service/  for REST Codes 
+* Referred  https://spring.io/guides/gs/accessing-data-jpa/ for JPA 
+* Referred  https://dzone.com/articles/spring-boot-restful-api-documentation-with-swagger for Swagger Integration
