@@ -1,0 +1,222 @@
+<html>
+<head>
+<script src="jscript/jquery-3.4.1.min.js"></script>
+<script src="jscript/jquery.serializeToJSON.js"></script>
+
+<script>
+function getSingleRecipe(id,url)
+{
+	$.ajax(url+id,{
+		type:'GET',
+		success : function(response,status,xhr){
+			
+			fillEditForm(response);
+		},
+		error : function(response,status,xhr){}
+	});
+}
+
+
+function fillEditForm(data)
+{
+	
+	/*
+	 recipeName: <input name="recipeName" type="text"  id="recipeName" />
+<br/>  VEG/NON-VEG :  <input name="isVeg" type="text" value="veg" id="isVeg"/> 
+ <br/>numberOfPeople: <input name="numberOfPeople" type="text" id="numberOfPeople" />
+ <br/>ingredients: <input name="ingredients" type="text" id="ingredients" />
+  <br/>instructions: <input name="instructions" type="textarea" id="instructions" />
+	*/
+	$("#editRecipeForm #recipeName").val(data.recipeName);
+	$("#editRecipeForm #isVeg").val(data.isVeg);
+	$("#editRecipeForm #numberOfPeople").val(data.numberOfPeople);
+	$("#editRecipeForm #ingredients").val(data.ingredients);
+	$("#editRecipeForm #instructions").val(data.instructions);
+	$("#editRecipeForm #recipeId").val(data.recipeId);
+
+	
+	$("#editViewRecipe").show();
+	
+}
+
+function buildFromResponse(data)
+{
+	var output="";
+	 for (var i = 0; i < data.length; i++)
+	 {
+         output += "<option value='"+data[i].recipeId+"'> <p> "  + data[i].recipeName + "</p>" +"</option>";
+     }
+	 return output;
+}
+
+function getAllRecipe(url)
+{
+	$("#recipesDropDown").hide();
+	
+	$.ajax(url,
+			{
+		    type:'GET',
+		    success: function(response,status,xhr){
+		    	
+		    	
+			var dataToDisplay=buildFromResponse(response);	 
+			if(response.length>0)
+			{
+				$("#listRecipes").find("option").remove();
+			    $("#listRecipes").append(dataToDisplay);
+			    $("#recipesDropDown").show();
+					
+			}	
+			
+		    },
+		    error: function(data,status,xhr){
+		    	
+		    	$('#message').append('Error: ' + errorMessage);
+		    },
+		    
+			});
+	
+	}
+$(document).ready(function(){
+	   var restURL="/recipes/";
+	getAllRecipe(restURL);
+	$("#manageRecipe").click(function(){
+		
+		 var selectedVal = $("#listRecipes :selected").val();
+		    var selectedText = $("#listRecipes :selected").text();
+		    getSingleRecipe(selectedVal,restURL);
+		    
+	});
+	
+	$("#submitDelete").click(function(){
+		var id = $("#listRecipes :selected").val();
+		$.ajax(restURL+id,{
+			type:'DELETE',
+			success : function(response,status,xhr){
+				
+				if(response.status==200)
+				{
+				getAllRecipe(restURL);
+				$('#message').html("");
+				$('#message').append(' Recipe Deleted ').show().delay(2000).fadeOut();
+				  $('#editViewRecipe').fadeOut();
+										
+				}
+				
+			},
+			error : function(response,status,xhr){}
+		});
+	});
+	
+  $("#submitAdd").click(function(){
+	  var recipeObject=$("#addRecipeForm").serializeToJSON({});
+	  var jsonData=JSON.stringify(recipeObject);
+
+	  $.ajax(restURL,{
+		  dataType: 'json',
+          contentType: 'application/json',
+			type: 'POST',  // http method
+			data:jsonData , 
+			success: function (response, status, xhr) {
+				
+				if(response.status==200)
+					{
+					$('#message').html("");
+					
+					$('#message').append('New Recipe Added ').show().delay(2000).fadeOut();
+					
+						getAllRecipe(restURL);
+					}
+			},
+			error: function (jqXhr, textStatus, errorMessage) {
+					$('#message').append('Error: ' + errorMessage);
+				}	
+	  }
+	  	);
+	  
+  });
+  
+  $("#submitEdit").click(function(){
+		
+	  var recipeObject=$("#editRecipeForm").serializeToJSON({});
+	  var jsonData=JSON.stringify(recipeObject);
+
+	  $.ajax(restURL,{
+		  dataType: 'json',
+          contentType: 'application/json',
+			type: 'PATCH',  // http method
+			data:jsonData , 
+			success: function (response, status, xhr) {
+			
+					getAllRecipe(restURL);
+					$('#message').html("");
+					$('#message').append(' Recipe Updated ').show().delay(2000).fadeOut();
+					  $('#editViewRecipe').fadeOut();
+											
+					
+			},
+			error: function (jqXhr, textStatus, errorMessage) {
+					$('#message').append('Error: ' + errorMessage);
+				}	
+	  }
+	  	);
+	  
+  });
+  
+  
+  
+});
+</script>
+</head>
+<body>
+<h2>Dashboard</h2>
+<h3 id="message"></h3>
+<div id="recipesDropDown">
+Select Recipe and Press Manage to View/Delete/Edit 
+<select id="listRecipes">
+</select>
+
+<input value="manage" type="button" id="manageRecipe" /> 
+</div>
+
+<div id="createRecipesDiv">
+Add Recipes 
+
+<form action="addRecipe" method="post" id="addRecipeForm">
+<br/>
+ recipeName: <input name="recipeName" type="text" />
+<br/> VEG/NON-VEG :  <input name="isVeg" type="text" value="veg" /> 
+ <br/>numberOfPeople: <input name="numberOfPeople" type="text" />
+ <br/>ingredients: <input name="ingredients" type="text" />
+  <br/>instructions: <input name="instructions" type="textarea" />
+  <br/><input value ="submit" type="button" id="submitAdd" /> 
+  <br/><input value ="RESET" type="reset" /> 
+  <input value="add" name="recipeAction" type="hidden" />
+  
+</form>
+
+</div>
+
+ <div id="editViewRecipe"  style="display:none">
+ <form  method="post" id="editRecipeForm">
+<br/>
+<h3>Edit Recipe </h3>
+ recipeName: <input name="recipeName" type="text"  id="recipeName" />
+<br/>  VEG/NON-VEG :  <input name="isVeg" type="text" value="veg" id="isVeg"/> 
+ <br/>numberOfPeople: <input name="numberOfPeople" type="text" id="numberOfPeople" />
+ <br/>ingredients: <input name="ingredients" type="text" id="ingredients" />
+  <br/>instructions: <input name="instructions" type="textarea" id="instructions" />
+<input name="recipeId" type="hidden" id="recipeId" />
+  
+  <br/><input value ="Edit" type="button" id="submitEdit" /> 
+  <br/><input value ="Delete" type="button" id="submitDelete" /> 
+  
+  
+</form>
+ </div>
+
+
+
+
+</body>
+</html>

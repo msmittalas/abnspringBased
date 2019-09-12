@@ -1,4 +1,4 @@
-# RecipesManager
+# Recipes Manager
 
 Simple Web Rest API project which can add, remove , update and getAll Recipes added by User . this project created with Spring boot,H2 Database,Maven,Spring REST  and Spring Web.
 
@@ -17,25 +17,28 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
-* **JDK 1.8** **MAVEN 3**
+* JDK 1.8
+* MAVEN 3
+* Eclipse (Optional)
 
-### Installing
+### Installing 
 
-A step by step series of examples that tell you how to get a development env running
+You can use Eclipse to start the porject in local or you can simply use mvn and java command to start the project in local
 
-Say what the step will be
+##### Install App using Eclipse
+A step by step series of examples that tell you how to get a development env running using Eclipse
 
-```
-Give the example
-```
+*  Download the source code in the local machine 
+*  In Eclipse , Import the Project using Import as Maven Project .
+*  Build the Project using Run As --> Maven Install
+*   No special instructions are required As Application is developed using Spring Boot and used Embedded DB .  We can easily run the projecPost Build , you can  Click 	Run As --> Java Application .
+*  Open any REST Tester for example POSTMAN , to test the services 
 
-And repeat
+#####Install App using CMD and Maven 
+A step by step series of examples that tell you how to get a development env running using cmd and 
 
-```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
+
 
 ## Running the tests
 
